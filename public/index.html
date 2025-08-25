@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Classificador de E-mails</title>
+
+  <link rel="stylesheet" href="./src/styles/variables.css">
+  <link rel="stylesheet" href="./src/styles/base.css">
+  <link rel="stylesheet" href="./src/styles/components.css">
+</head>
+<body>
+<header>
+  <h1>Classificador de E-mails (Produtivo x Improdutivo)</h1>
+</header>
+
+<main>
+  <div class="card">
+    <form id="form" enctype="multipart/form-data">
+      <div class="grid">
+        <div>
+          <label for="texto">Cole o texto do e-mail</label>
+          <textarea id="texto" name="texto" placeholder="Cole aqui o conteúdo do e-mail..."></textarea>
+          <p class="muted">Se você preencher o texto acima, o arquivo (se enviado) pode ser ignorado pela API.</p>
+        </div>
+        <div>
+          <label for="file">Ou envie um arquivo (.txt ou .pdf)</label>
+          <input id="file" name="file" type="file" accept=".txt,.pdf" />
+          <p class="muted">O navegador enviará o arquivo para a API via <code>multipart/form-data</code>.</p>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:12px">
+        <button id="submitBtn" type="submit">
+          <span class="btnText">Processar</span>
+        </button>
+        <span class="muted">Nenhum dado é salvo neste front-end.</span>
+      </div>
+
+      <p id="error" class="error" style="display:none;margin-top:10px"></p>
+    </form>
+  </div>
+
+  <div id="resultCard" class="card result">
+    <h2 style="margin-top:0">Resultado</h2>
+    <p>Categoria: <span id="categoryBadge" class="badge">—</span></p>
+    <h3>Resposta automática sugerida</h3>
+    <pre id="suggestion">—</pre>
+  </div>
+</main>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
