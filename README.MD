@@ -19,7 +19,6 @@ Permite enviar textos ou arquivos (.txt/.pdf) para a API de classificação e ex
 │    ├── src/
 │    │   ├── main.js # Entrada JS
 │    │   ├── constants.js # URL da API
-│    │   ├── mais.js # Inicializa componentes
 │    │   ├── components/ # Componentes da UI
 │    │   │     ├── form.js
 │    │   │     ├── Badge.js
